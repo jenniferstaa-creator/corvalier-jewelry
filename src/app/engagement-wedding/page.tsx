@@ -37,7 +37,7 @@ export default function EngagementWeddingPage() {
           <Reveal>
             <div className="relative aspect-[4/5] overflow-hidden rounded-[2px] bg-burgundy-deep">
               <Image
-                src="https://images.unsplash.com/photo-1605100804763-247f67b355f4?w=1200&q=85"
+                src="/images/aurore.svg"
                 alt="Aurore solitaire"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"

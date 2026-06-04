@@ -5,15 +5,20 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+    // Local editorial SVGs in /public/images
     dangerouslyAllowSVG: true,
-    remotePatterns: [
-      { protocol: "https", hostname: "images.unsplash.com", pathname: "/**" },
-    ],
+    contentSecurityPolicy:
+      "default-src 'self'; script-src 'none'; sandbox;",
+    unoptimized: true,
   },
   async redirects() {
     return [
       { source: "/collections", destination: "/jewelry", permanent: true },
-      { source: "/collections/:collection/:product", destination: "/jewelry/:product", permanent: true },
+      {
+        source: "/collections/:collection/:product",
+        destination: "/jewelry/:product",
+        permanent: true,
+      },
       { source: "/collections/:collection", destination: "/jewelry", permanent: true },
     ];
   },

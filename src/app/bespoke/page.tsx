@@ -59,7 +59,7 @@ export default function BespokePage() {
           <Reveal>
             <div className="relative aspect-[4/5] overflow-hidden rounded-[2px] bg-noir">
               <Image
-                src="https://images.unsplash.com/photo-1605100804763-247f67b355f4?w=1200&q=85"
+                src="/images/aurore.svg"
                 alt="A bespoke solitaire in progress"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"

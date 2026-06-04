@@ -13,11 +13,22 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Deploy to Vercel
 
-1. Import this repository at [vercel.com/new](https://vercel.com/new).
-2. Framework preset: **Next.js** (auto-detected).
-3. Build command: `npm run build` · Output: `.next` (default).
-4. No environment variables required for the static demo.
-5. Deploy — Vercel runs `npm install` and builds on their servers (no `node_modules` in git).
+1. Push this repo to GitHub (see below).
+2. Import at [vercel.com/new](https://vercel.com/new) → select **corvalier-jewelry**.
+3. Framework: **Next.js** (auto-detected).
+4. Build command: `npm run build` · Install: `npm install` · Node.js **20.x** (see `.nvmrc`).
+5. No environment variables required for the demo.
+6. Deploy. Images load from `/public/images` and 3D models from `/public/models`.
+
+### Pre-deploy checklist
+
+```bash
+npm install
+npm run typecheck   # no TypeScript errors
+npm run build       # must pass before pushing
+```
+
+Do **not** commit `node_modules`, `.next`, or `.env*` files.
 
 ## Git hygiene
 

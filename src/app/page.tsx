@@ -67,7 +67,7 @@ export default function HomePage() {
           <Reveal delay={300} className="relative">
             <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2px] shadow-[0_40px_90px_-20px_rgba(0,0,0,0.65)]">
               <Image
-                src="https://images.unsplash.com/photo-1515562141207-7a88fb407278?w=1200&q=85"
+                src="/images/hero.svg"
                 alt="Corvalier high jewelry"
                 fill
                 priority
@@ -122,7 +122,7 @@ export default function HomePage() {
           <Reveal>
             <div className="relative aspect-[4/5] overflow-hidden rounded-[2px] bg-burgundy-deep">
               <Image
-                src="https://images.unsplash.com/photo-1617038260897-c2a1ae572e96?w=1200&q=85"
+                src="/images/vesper.svg"
                 alt="Wedding bands"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -233,7 +233,7 @@ export default function HomePage() {
           <Reveal delay={150}>
             <div className="relative aspect-square overflow-hidden rounded-[2px] bg-burgundy-deep">
               <Image
-                src="https://images.unsplash.com/photo-1573408301185-43c283de0ad5?w=1200&q=85"
+                src="/images/atelier.svg"
                 alt="Corvalier private salon"
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"

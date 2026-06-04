@@ -62,7 +62,7 @@ export default function AboutPage() {
             <Reveal delay={150}>
               <div className="relative aspect-[3/4] overflow-hidden rounded-[2px] bg-noir">
                 <Image
-                  src="https://images.unsplash.com/photo-1573408301185-43c283de0ad5?w=1200&q=85"
+                  src="/images/atelier.svg"
                   alt="The Corvalier atelier in Paris"
                   fill
                   sizes="(max-width: 1024px) 100vw, 33vw"
