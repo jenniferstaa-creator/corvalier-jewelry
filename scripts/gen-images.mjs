@@ -1,4 +1,4 @@
-// Generates editorial poster SVGs for CORVALIER pieces.
+// Generates editorial poster SVGs for CORDELLIER pieces.
 // Moody studio backdrop + soft champagne light + faceted jewel silhouette.
 import { writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";

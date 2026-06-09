@@ -4,6 +4,8 @@ import { useMemo, useState } from "react";
 import type { Product } from "@/lib/products";
 import { ProductCard } from "@/components/product-card";
 import { Reveal } from "@/components/reveal";
+import { useDictionary } from "@/i18n/i18n-provider";
+import { LocaleLink } from "@/i18n/locale-link";
 
 type JewelryGridProps = {
   items: Product[];
@@ -16,12 +18,13 @@ export function JewelryGrid({
   categories,
   showLabBadge = false,
 }: JewelryGridProps) {
-  const [active, setActive] = useState("All");
+  const dict = useDictionary();
+  const [active, setActive] = useState(categories[0] ?? dict.categories.all);
 
   const filtered = useMemo(() => {
-    if (active === "All") return items;
-    return items.filter((p) => p.category.includes(active));
-  }, [items, active]);
+    if (active === categories[0]) return items;
+    return items.filter((p) => p.category === active);
+  }, [items, active, categories]);
 
   return (
     <>
@@ -44,11 +47,13 @@ export function JewelryGrid({
 
       {showLabBadge && (
         <p className="mt-8 max-w-xl font-serif text-lg leading-relaxed text-espresso/65">
-          Pieces marked with a laboratory-grown diamond are selected stone-by-stone
-          in the salon.{" "}
-          <a href="/diamond-guide" className="text-burgundy underline decoration-champagne underline-offset-4">
-            Read the diamond guide
-          </a>
+          {dict.jewelryGrid.labNote}{" "}
+          <LocaleLink
+            href="/diamond-guide"
+            className="text-burgundy underline decoration-champagne underline-offset-4"
+          >
+            {dict.jewelryGrid.labLink}
+          </LocaleLink>
           .
         </p>
       )}
@@ -59,7 +64,7 @@ export function JewelryGrid({
             <div className="relative">
               {showLabBadge && product.labGrown && (
                 <span className="absolute right-0 top-0 z-10 -translate-y-3 border border-champagne/50 bg-ivory px-3 py-1 font-sans text-[0.55rem] uppercase tracking-wide2 text-burgundy">
-                  Lab-grown diamond
+                  {dict.jewelryGrid.labBadge}
                 </span>
               )}
               <ProductCard product={product} />
@@ -70,7 +75,7 @@ export function JewelryGrid({
 
       {filtered.length === 0 && (
         <p className="mt-16 font-serif text-xl text-espresso/50">
-          No pieces in this category are currently presented in the salon.
+          {dict.jewelryGrid.empty}
         </p>
       )}
     </>

@@ -4,25 +4,24 @@ export type TrustItem = {
   detail: string;
 };
 
-/** Maison assurances — editorial, not e-commerce badge strips. */
 export const trustItems: TrustItem[] = [
+  {
+    title: "Certified stones only",
+    summary: "Lab-grown diamonds, fully traceable.",
+    detail:
+      "Every Cordellier diamond is certified and laboratory-grown — chosen in private, never from an anonymous catalogue.",
+  },
   {
     title: "Insured delivery",
     summary: "White-glove courier, unmarked packaging.",
     detail:
-      "Finished pieces travel under full insurance with a bonded courier. Packaging is deliberately discreet — no branding visible from the street.",
+      "Finished pieces travel under full insurance with a bonded courier. Packaging is deliberately discreet.",
   },
   {
-    title: "Lifetime resizing",
+    title: "Lifetime care",
     summary: "Rings return to the atelier, not a counter.",
     detail:
-      "Solène and wedding bands commissioned through Corvalier may be resized for life. Each adjustment is logged in the maison archive and performed by the same bench.",
-  },
-  {
-    title: "Exchange & care",
-    summary: "Clear terms, never hidden in fine print.",
-    detail:
-      "Bespoke commissions are made to order and cannot be exchanged. Salon-ready pieces may be reviewed for exchange within fourteen days, by appointment only.",
+      "Solène and wedding bands commissioned through Cordellier may be resized for life. Each adjustment is logged in the maison archive.",
   },
   {
     title: "Client voices",
@@ -35,20 +34,20 @@ export const trustItems: TrustItem[] = [
 export const clientVoices = [
   {
     quote:
-      "We chose a lab-grown centre stone in the salon. The fire was indistinguishable from what I had seen at the grandes maisons — but the journey felt entirely ours.",
+      "We chose a certified lab-grown centre stone in the salon. The fire was extraordinary — and knowing the origin made the decision feel right.",
     attribution: "Commission · Solène Aurore",
-    city: "Paris",
+    city: "Stockholm",
   },
   {
     quote:
       "The atelier resized my Vesper band twice across a decade. They remembered the original gouache.",
     attribution: "Héritage · Vesper Eternity",
-    city: "Genève",
+    city: "Göteborg",
   },
   {
     quote:
       "No window, no rush. Three afternoons in the salon before the drawing was even approved.",
     attribution: "Bespoke · Nocturne Rivage",
-    city: "New York",
+    city: "Malmö",
   },
 ];

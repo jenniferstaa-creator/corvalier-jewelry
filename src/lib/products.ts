@@ -1,40 +1,18 @@
-export type CustomizationOption = {
-  label: string;
-  choices: string[];
-};
+export type {
+  Product,
+  ProductSegment,
+  ProductTier,
+  ProductCategory,
+  CustomizationOption,
+} from "@/data/products";
 
-export type ProductSegment = "engagement" | "wedding" | "jewelry";
+export {
+  products,
+  getProduct,
+} from "@/data/products";
 
-export type Product = {
-  slug: string;
-  name: string;
-  collection: string;
-  collectionSlug: string;
-  /** Commercial segment for maison navigation */
-  segment: ProductSegment;
-  category: string;
-  /** Laboratory-grown centre or principal stones */
-  labGrown?: boolean;
-  reference: string;
-  material: string;
-  gemstone: string;
-  carat: string;
-  /** Maison price label — pieces are priced on application */
-  priceLabel: string;
-  tagline: string;
-  description: string;
-  story: string;
-  details: string[];
-  customization: CustomizationOption[];
-  /** Editorial poster image in /public/images */
-  image: string;
-  /** Path to a local GLB model in /public/models */
-  modelUrl: string;
-  /** Optional poster image shown before the model loads */
-  poster?: string;
-  /** Visual tones used for the editorial gradient overlays */
-  tones: [string, string, string];
-};
+import type { ProductSegment, ProductTier } from "@/data/products";
+import { products } from "@/data/products";
 
 export type Collection = {
   slug: string;
@@ -79,227 +57,22 @@ export const collections: Collection[] = [
   },
 ];
 
-export const products: Product[] = [
-  {
-    slug: "solene-aurore-solitaire",
-    name: "Aurore Solitaire",
-    collection: "Solène",
-    collectionSlug: "solene",
-    segment: "engagement",
-    category: "Engagement Ring",
-    labGrown: true,
-    reference: "SOL·001",
-    material: "Platinum 950",
-    gemstone: "Old-mine cushion diamond, D / VVS1",
-    carat: "3.04 ct centre",
-    priceLabel: "Price on application",
-    tagline: "A single light, set to breathe.",
-    description:
-      "The Aurore is the maison's founding gesture — one exceptional stone lifted on an almost invisible platinum gallery so the diamond appears to float above the finger.",
-    story:
-      "Each Aurore begins with a stone selected in the salon before the setting is ever drawn. The gallery is pierced by hand so light enters from beneath, and the band is tapered to disappear against the skin.",
-    details: [
-      "Centre stone selected by appointment",
-      "Hand-pierced floating gallery",
-      "Comb-tapered band, 1.8mm",
-      "Engraved interior with maison cipher",
-    ],
-    customization: [
-      { label: "Metal", choices: ["Platinum 950", "18k Champagne Gold", "18k Rose Gold"] },
-      { label: "Centre stone", choices: ["Old-mine diamond", "Ceylon sapphire", "Colombian emerald"] },
-      { label: "Carat", choices: ["1.5 – 2 ct", "2 – 3 ct", "3 ct and above"] },
-      { label: "Engraving", choices: ["None", "Initials", "Date"] },
-    ],
-    image: "/images/aurore.svg",
-    modelUrl: "/models/ring.glb",
-    tones: ["#6E232C", "#C9A66B", "#E2CD9F"],
-  },
-  {
-    slug: "nocturne-rivage-necklace",
-    name: "Rivage Necklace",
-    collection: "Nocturne",
-    collectionSlug: "nocturne",
-    segment: "jewelry",
-    category: "Necklace",
-    reference: "NOC·014",
-    material: "18k Champagne Gold",
-    gemstone: "Graduated Burmese rubies & rose-cut diamonds",
-    carat: "18.6 ct total",
-    priceLabel: "Price on application — atelier commission",
-    tagline: "Wearable architecture for the late hours.",
-    description:
-      "Rivage is articulated across forty-one links so the necklace pours like water against the décolleté, each ruby caught in a champagne-gold tide.",
-    story:
-      "Eleven hundred hours pass between the first gouache and the finished Rivage. The articulation is built link by link so the piece holds the body rather than resting on it.",
-    details: [
-      "41 individually articulated links",
-      "Burmese rubies, unheated",
-      "Convertible clasp — wearable two lengths",
-      "Atelier commission, 9–12 months",
-    ],
-    customization: [
-      { label: "Metal", choices: ["18k Champagne Gold", "Platinum 950"] },
-      { label: "Principal stone", choices: ["Burmese ruby", "Ceylon sapphire", "Paraíba tourmaline"] },
-      { label: "Length", choices: ["Collier, 40cm", "Sautoir, 70cm", "Convertible"] },
-    ],
-    image: "/images/rivage.svg",
-    modelUrl: "/models/necklace.glb",
-    tones: ["#4A141B", "#A8854B", "#C9A66B"],
-  },
-  {
-    slug: "meridienne-ondine-earrings",
-    name: "Ondine Drop Earrings",
-    collection: "Méridienne",
-    collectionSlug: "meridienne",
-    segment: "jewelry",
-    category: "Earrings",
-    reference: "MER·022",
-    material: "Platinum 950",
-    gemstone: "Pear-cut Paraíba tourmalines & diamonds",
-    carat: "6.2 ct pair",
-    priceLabel: "Price on application",
-    tagline: "Composed for candlelight.",
-    description:
-      "Two pear-cut Paraíba tourmalines hang from a fringe of pavé, designed to swing a fraction of a degree with every turn of the head.",
-    story:
-      "The Ondine is balanced on a jeweller's scale so each drop falls true. The detachable top stud allows the piece to be worn from the office to the opera.",
-    details: [
-      "Detachable pavé top — two ways to wear",
-      "Neon Paraíba, Mozambique origin",
-      "Knife-edge pavé fringe",
-      "French clip fitting, hand-adjusted",
-    ],
-    customization: [
-      { label: "Metal", choices: ["Platinum 950", "18k Champagne Gold"] },
-      { label: "Drop stone", choices: ["Paraíba tourmaline", "Aquamarine", "Yellow diamond"] },
-      { label: "Fitting", choices: ["Post & clip", "Lever back"] },
-    ],
-    image: "/images/ondine.svg",
-    modelUrl: "/models/earrings.glb",
-    tones: ["#5A1A22", "#7FB8C9", "#E2CD9F"],
-  },
-  {
-    slug: "heritage-meridien-cuff",
-    name: "Méridien Cuff",
-    collection: "Héritage",
-    collectionSlug: "heritage",
-    segment: "jewelry",
-    category: "Bracelet",
-    reference: "HER·007",
-    material: "18k Champagne Gold",
-    gemstone: "Channel-set baguette diamonds",
-    carat: "9.4 ct total",
-    priceLabel: "Price on application",
-    tagline: "An object to be inherited.",
-    description:
-      "A substantial open cuff in brushed champagne gold, scored by a single meridian of baguette diamonds that catches the light like a horizon.",
-    story:
-      "Carved from a solid billet and finished with a hand-applied satin grain, the Méridien is engineered to spring open by a few millimetres and close to the wrist exactly.",
-    details: [
-      "Solid 18k, hand-satin finish",
-      "Channel-set baguette meridian",
-      "Sprung open-cuff form",
-      "Sized to the individual wrist",
-    ],
-    customization: [
-      { label: "Metal", choices: ["18k Champagne Gold", "18k Rose Gold", "Platinum 950"] },
-      { label: "Finish", choices: ["Satin grain", "High polish"] },
-      { label: "Stone line", choices: ["Baguette diamond", "Calibré sapphire", "Plain"] },
-    ],
-    image: "/images/meridien.svg",
-    modelUrl: "/models/cuff.glb",
-    tones: ["#3B2C24", "#C9A66B", "#E2CD9F"],
-  },
-  {
-    slug: "solene-vesper-band",
-    name: "Vesper Eternity Band",
-    collection: "Solène",
-    collectionSlug: "solene",
-    segment: "wedding",
-    category: "Wedding Band",
-    labGrown: true,
-    reference: "SOL·009",
-    material: "Platinum 950",
-    gemstone: "Full circle round brilliant diamonds",
-    carat: "2.1 ct total",
-    priceLabel: "Price on application",
-    tagline: "An unbroken line of light.",
-    description:
-      "A full-circle eternity band set in a shared-prong gallery so the diamonds meet with no metal between them — a continuous ribbon of fire.",
-    story:
-      "The Vesper is matched stone for stone within a single tolerance, then set so the line of light never breaks across the circumference.",
-    details: [
-      "Shared-prong full eternity",
-      "Stones matched to a single grade",
-      "Comfort-fit interior",
-      "Made to exact finger size",
-    ],
-    customization: [
-      { label: "Metal", choices: ["Platinum 950", "18k Champagne Gold", "18k Rose Gold"] },
-      { label: "Stone", choices: ["Round diamond", "Calibré ruby", "Calibré sapphire"] },
-      { label: "Width", choices: ["2.0mm", "2.6mm", "3.2mm"] },
-    ],
-    image: "/images/vesper.svg",
-    modelUrl: "/models/eternity.glb",
-    tones: ["#5A1A22", "#E2CD9F", "#C9A66B"],
-  },
-  {
-    slug: "nocturne-comtesse-devant",
-    name: "Comtesse Devant-de-Corsage",
-    collection: "Nocturne",
-    collectionSlug: "nocturne",
-    segment: "jewelry",
-    category: "Brooch",
-    reference: "NOC·031",
-    material: "Platinum 950 & 18k gold",
-    gemstone: "Cushion sapphire & diamond cascade",
-    carat: "24.0 ct total",
-    priceLabel: "Price on application — atelier commission",
-    tagline: "A ceremonial cascade.",
-    description:
-      "A devant-de-corsage in the grand tradition — a cushion Ceylon sapphire crowning an articulated cascade of diamonds meant to tremble against silk.",
-    story:
-      "The Comtesse is a one-of-one commission, conceived as a contemporary answer to the corsage ornaments of the belle époque, and convertible into a pendant and two brooches.",
-    details: [
-      "One-of-one atelier commission",
-      "Convertible into three pieces",
-      "Trembleuse cascade mounts",
-      "Unheated Ceylon centre sapphire",
-    ],
-    customization: [
-      { label: "Configuration", choices: ["Devant-de-corsage", "Pendant", "Brooch pair"] },
-      { label: "Centre stone", choices: ["Ceylon sapphire", "Emerald", "Padparadscha"] },
-    ],
-    image: "/images/comtesse.svg",
-    modelUrl: "/models/necklace.glb",
-    tones: ["#4A141B", "#3A5A8C", "#C9A66B"],
-  },
-];
-
-export function getProduct(slug: string): Product | undefined {
-  return products.find((p) => p.slug === slug);
-}
-
 export function getCollection(slug: string): Collection | undefined {
   return collections.find((c) => c.slug === slug);
 }
 
-export function productsByCollection(slug: string): Product[] {
+export function productsByCollection(slug: string) {
   return products.filter((p) => p.collectionSlug === slug);
 }
 
-export function productsBySegment(segment: ProductSegment): Product[] {
+export function productsBySegment(segment: ProductSegment) {
   return products.filter((p) => p.segment === segment);
 }
 
-export function labGrownProducts(): Product[] {
-  return products.filter((p) => p.labGrown);
+export function productsByTier(tier: ProductTier) {
+  return products.filter((p) => p.tier === tier);
 }
 
-export const jewelryCategories = [
-  "All",
-  "Necklace",
-  "Earrings",
-  "Bracelet",
-  "Brooch",
-] as const;
+export function labGrownProducts() {
+  return products.filter((p) => p.labGrown);
+}

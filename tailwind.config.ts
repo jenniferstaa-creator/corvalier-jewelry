@@ -1,11 +1,16 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: [
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/lib/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/globals.css",
+  ],
   theme: {
     extend: {
       colors: {
-        // CORVALIER maison palette — noir editorial
+        // CORDELLIER maison palette — noir editorial
         noir: {
           DEFAULT: "#0E0B09",
           soft: "#15110E",

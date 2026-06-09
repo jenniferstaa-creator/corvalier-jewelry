@@ -19,8 +19,14 @@
   body {
     background-color: var(--ivory);
     color: #2b201a;
+    font-family: var(--font-jost), "Jost", system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 
   ::selection {
@@ -82,6 +88,10 @@
 
   .btn-outline {
     @apply inline-flex items-center justify-center gap-3 border border-champagne/70 px-9 py-4 font-sans text-[0.72rem] uppercase tracking-wide2 text-espresso transition-all duration-500 ease-silk hover:border-champagne hover:bg-champagne/10;
+  }
+
+  .btn-champagne {
+    @apply inline-flex items-center justify-center gap-3 bg-champagne px-9 py-4 font-sans text-[0.72rem] uppercase tracking-wide2 text-espresso transition-all duration-500 ease-silk hover:bg-champagne-light;
   }
 
   .link-underline {

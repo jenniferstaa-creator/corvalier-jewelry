@@ -1,4 +1,4 @@
-// Procedurally generates jewelry GLB models for CORVALIER.
+// Procedurally generates jewelry GLB models for CORDELLIER.
 // No external dependencies — writes a valid binary glTF (GLB) container.
 import { writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -264,7 +264,7 @@ function buildGLB(primitives, materials) {
 
   const bin = Buffer.concat(buffers);
   const gltf = {
-    asset: { version: "2.0", generator: "corvalier-gen" },
+    asset: { version: "2.0", generator: "cordellier-gen" },
     scene: 0,
     scenes: [{ nodes: [0] }],
     nodes: [{ mesh: 0, name: "jewel" }],

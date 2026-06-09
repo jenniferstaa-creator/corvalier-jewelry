@@ -13,13 +13,15 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      { source: "/collections", destination: "/jewelry", permanent: true },
+      { source: "/collections", destination: "/en/jewelry", permanent: true },
       {
         source: "/collections/:collection/:product",
-        destination: "/jewelry/:product",
+        destination: "/en/jewelry/:product",
         permanent: true,
       },
-      { source: "/collections/:collection", destination: "/jewelry", permanent: true },
+      { source: "/collections/:collection", destination: "/en/jewelry", permanent: true },
+      { source: "/engagement-wedding", destination: "/en/engagement", permanent: true },
+      { source: "/:locale(en|sv)/engagement-wedding", destination: "/:locale/engagement", permanent: true },
     ];
   },
 };

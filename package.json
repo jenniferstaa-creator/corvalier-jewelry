@@ -1,10 +1,10 @@
 {
-  "name": "corvalier",
+  "name": "cordellier",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev -p 3000",
-    "dev:clean": "rm -rf .next node_modules/.cache && next dev -p 3000",
+    "dev:clean": "node scripts/reset-dev.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

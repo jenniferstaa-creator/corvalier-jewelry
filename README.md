@@ -1,4 +1,4 @@
-# CORVALIER
+# CORDELLIER
 
 Private fine jewelry maison — Next.js 15, App Router, Tailwind CSS.
 
@@ -14,7 +14,7 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Deploy to Vercel
 
 1. Push this repo to GitHub (see below).
-2. Import at [vercel.com/new](https://vercel.com/new) → select **corvalier-jewelry**.
+2. Import at [vercel.com/new](https://vercel.com/new) → select **cordellier-jewelry**.
 3. Framework: **Next.js** (auto-detected).
 4. Build command: `npm run build` · Install: `npm install` · Node.js **20.x** (see `.nvmrc`).
 5. No environment variables required for the demo.
