@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { NavbarThemeProvider } from "@/components/navbar-theme";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { I18nProvider } from "@/i18n/i18n-provider";
@@ -58,9 +59,11 @@ export default async function LocaleLayout({
 
   return (
     <I18nProvider locale={locale} dict={dict}>
-      <SiteHeader />
-      <main className="min-h-screen">{children}</main>
-      <SiteFooter />
+      <NavbarThemeProvider>
+        <SiteHeader />
+        <main className="min-h-screen">{children}</main>
+        <SiteFooter />
+      </NavbarThemeProvider>
     </I18nProvider>
   );
 }

@@ -19,7 +19,10 @@ export function ProductHero({
   const dict = useDictionary();
 
   return (
-    <section className="relative overflow-hidden bg-burgundy-deep text-ivory">
+    <section
+      data-nav-surface="dark"
+      className="relative overflow-hidden bg-burgundy-deep text-ivory"
+    >
       <div className="relative min-h-[48vh] md:min-h-[56vh]">
         <div className="absolute inset-0">
           <ProductImage

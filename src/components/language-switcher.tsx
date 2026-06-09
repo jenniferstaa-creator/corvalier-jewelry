@@ -20,7 +20,7 @@ export function LanguageSwitcher({ inverted }: { inverted?: boolean }) {
   return (
     <div
       className={`flex items-center gap-1 font-sans text-[0.58rem] uppercase tracking-wide2 ${
-        inverted ? "text-ivory/70" : "text-espresso/50"
+        inverted ? "text-[#F7EFE3]/70" : "text-[#5A1620]/50"
       }`}
       aria-label="Language"
     >
@@ -32,11 +32,11 @@ export function LanguageSwitcher({ inverted }: { inverted?: boolean }) {
             className={`px-1.5 py-1 transition-colors duration-500 ${
               locale === code
                 ? inverted
-                  ? "text-champagne"
-                  : "text-burgundy"
+                  ? "text-[#D8B56D]"
+                  : "text-[#5A1620]"
                 : inverted
-                  ? "hover:text-ivory"
-                  : "hover:text-burgundy"
+                  ? "hover:text-[#F7EFE3]"
+                  : "hover:text-[#5A1620]"
             }`}
             aria-current={locale === code ? "page" : undefined}
           >

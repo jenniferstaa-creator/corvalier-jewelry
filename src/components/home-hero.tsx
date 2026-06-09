@@ -9,7 +9,10 @@ export function HomeHero() {
   const dict = useDictionary();
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-burgundy-deep text-ivory">
+    <section
+      data-nav-surface="dark"
+      className="relative min-h-screen overflow-hidden bg-burgundy-deep text-ivory"
+    >
       <video
         autoPlay
         muted

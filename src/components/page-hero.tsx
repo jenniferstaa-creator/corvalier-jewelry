@@ -8,7 +8,10 @@ type PageHeroProps = {
 
 export function PageHero({ eyebrow, title, intro }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-burgundy-deep pt-40 text-ivory md:pt-48">
+    <section
+      data-nav-surface="dark"
+      className="relative overflow-hidden bg-burgundy-deep pt-40 text-ivory md:pt-48"
+    >
       <div
         className="absolute inset-0"
         style={{
